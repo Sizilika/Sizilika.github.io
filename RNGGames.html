@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The RNG Games "TOGE PRODUCTION"</title>
+    <link rel="stylesheet" href="Tries.css">
+    <Style>
+        
+    </Style>
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <header>
+      <h1 class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="45" viewBox="0,0,256,256">
+            <g fill="#339af0" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+                stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                <g transform="scale(5.33333,5.33333)">
+                    <path transform="translate(-277.143,-3.392)"
+                        d="M301.1,8.4l-3.5,3.3c1.2,1.8 1.7,3.8 1.7,4.9c-1.1,-1.9 -2,-2.4 -3.2,-3.1l-3,3c3.1,1.1 6,4.2 6,8c0,1.8 -1.1,6.2 -5.4,6v0c-3.2,-0.4 -6.2,-4.1 -6.5,-8.2c-0.3,-4.1 1.1,-7.5 4,-10.8v0c-5.2,3.1 -8.5,8.1 -8.9,14.5c0,0.2 0,0.3 0,0.5v0c0,0.2 0,0.3 0,0.5c0,0.2 0,0.3 0,0.5c0,10.5 8.5,19 19,19c10.5,0 19,-8.5 19,-19c0,-0.5 0,-1 -0.1,-1.5c-0.5,-6.4 -3.7,-11.4 -8.9,-14.5v0c2.8,3.3 4.2,6.8 4,10.8c-0.3,4.1 -3.3,7.8 -6.5,8.2v0c-4.4,0.2 -5.4,-4.2 -5.4,-6c0,-3.8 2.9,-6.9 6,-8l-3,-3c-1.1,0.8 -2.1,1.3 -3.2,3.1c0,-1.1 0.5,-3.1 1.7,-4.9z">
+                    </path>
+                </g>
+            </g>
+        </svg>
+    </h1>
+      
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Company.html">Company</a></li>
+            <li><a href="History.html">History</a></li>
+            <li><a href="RNGGames.html">RNG Games Made</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+    </header>
+    
+    
+    
+    
+    <div class="content">
+       <h1>The Random Picker Games you should Try</h1>
+
+       <div id="image-container">
+           <img id="random-image" src="" alt="Random Image">
+       </div>
+   
+       <div id="link-container">
+           <a id="random-link" href="#" target="_blank">Link To the Game</a>
+       </div>
+   
+       <button id="generate-button">Test Your Luck</button>
+   
+    </div>
+    
+    <!-- partial -->
+      
+    </body>
+    <script>
+        // Define an array of image and link objects
+        const imagesAndLinks = [
+            {
+                imageSrc: 'https://cdn.oneesports.id/cdn-data/sites/2/2023/02/A-Space-for-the-Unbound-3.jpg',
+                linkUrl: 'https://store.steampowered.com/app/1201270/A_Space_for_the_Unbound/',
+            },
+            {
+                imageSrc: 'https://i.pinimg.com/564x/53/33/70/533370e4d81bc6a489d579bef9372008.jpg',
+                linkUrl: 'https://store.steampowered.com/app/914800/Coffee_Talk/',
+            },
+            {
+                imageSrc: 'https://pbs.twimg.com/media/Frapn_VagAEqcF3?format=png&name=small',
+                linkUrl: 'https://store.steampowered.com/app/1599860/Vanaris_Tactics/?curator_clanid=5485678',
+            },
+            {
+                imageSrc: 'https://pbs.twimg.com/card_img/1714400237035331584/xDURk7eB?format=jpg&name=small',
+                linkUrl: 'https://store.steampowered.com/app/657000/Rising_Hell/?curator_clanid=5485678',
+            },
+            // Add more image and link objects as needed
+        ];
+
+        // Function to generate a random number within a given range
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Function to display a random image and link
+        function displayRandomImageAndLink() {
+            const randomIndex = getRandomNumber(0, imagesAndLinks.length - 1);
+            const randomImage = document.getElementById('random-image');
+            const randomLink = document.getElementById('random-link');
+
+            randomImage.src = imagesAndLinks[randomIndex].imageSrc;
+            randomLink.href = imagesAndLinks[randomIndex].linkUrl;
+        }
+
+        // Initial display
+        displayRandomImageAndLink();
+
+        // Add a click event listener to the button
+        const generateButton = document.getElementById('generate-button');
+        generateButton.addEventListener('click', displayRandomImageAndLink);
+    </script>
+    </html>

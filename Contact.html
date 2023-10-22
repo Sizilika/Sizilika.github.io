@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Contact"TOGE PRODUCTION"</title>
+    <link rel="stylesheet" href="Tryed.css">
+    <script>
+      function validateForm() {
+        let fname = document.getElementById("fname").value;
+        let lname = document.getElementById("lname").value;
+        let Complaint = document.getElementById("Complaint").value;
+        let education = document.getElementById("education").value;
+        let error1 = document.getElementById("error1");
+        let error2 = document.getElementById("error2");
+        let error3 = document.getElementById("error3");
+        let error4 = document.getElementById("error4");
+        let isValid = true;
+
+        if (fname === "") {
+      error1.innerText = "Please type your first name";
+      isValid = false;
+    } else {
+      error1.innerText = "";
+    }
+
+    // Validate last name
+    if (lname === "") {
+      error2.innerText = "Please type your last name";
+      isValid = false;
+    } else {
+      error2.innerText = "";
+    }
+
+    // Validate role selection
+    if (education === "None") {
+      error3.innerText = "Please choose who you are";
+      isValid = false;
+    } else {
+      error3.innerText = "";
+    }
+    if (Complaint === "") {
+      error4.innerText = "Any Complaints, Surely there is one";
+      isValid = false;
+    } else {
+      error4.innerText = "";
+    }
+
+    return isValid; // Return the overall form validity
+  }
+    </script>
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <header>
+      <h1 class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="45" viewBox="0,0,256,256">
+            <g fill="#339af0" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+                stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                <g transform="scale(5.33333,5.33333)">
+                    <path transform="translate(-277.143,-3.392)"
+                        d="M301.1,8.4l-3.5,3.3c1.2,1.8 1.7,3.8 1.7,4.9c-1.1,-1.9 -2,-2.4 -3.2,-3.1l-3,3c3.1,1.1 6,4.2 6,8c0,1.8 -1.1,6.2 -5.4,6v0c-3.2,-0.4 -6.2,-4.1 -6.5,-8.2c-0.3,-4.1 1.1,-7.5 4,-10.8v0c-5.2,3.1 -8.5,8.1 -8.9,14.5c0,0.2 0,0.3 0,0.5v0c0,0.2 0,0.3 0,0.5c0,0.2 0,0.3 0,0.5c0,10.5 8.5,19 19,19c10.5,0 19,-8.5 19,-19c0,-0.5 0,-1 -0.1,-1.5c-0.5,-6.4 -3.7,-11.4 -8.9,-14.5v0c2.8,3.3 4.2,6.8 4,10.8c-0.3,4.1 -3.3,7.8 -6.5,8.2v0c-4.4,0.2 -5.4,-4.2 -5.4,-6c0,-3.8 2.9,-6.9 6,-8l-3,-3c-1.1,0.8 -2.1,1.3 -3.2,3.1c0,-1.1 0.5,-3.1 1.7,-4.9z">
+                    </path>
+                </g>
+            </g>
+        </svg>
+    </h1>
+      
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Company.html">Company</a></li>
+            <li><a href="History.html">History</a></li>
+            <li><a href="RNGGames.html">RNG Games Made</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+    </header>
+    
+    
+    
+    
+    <div class="content" >
+       <h2>CONTACT FORM</h2>
+       <form name="forms" action="ThankU.html" onsubmit="return validateForm()">
+        <label for="fname"> First name</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <div id="error1" class="error-message"></div>
+        <label for="lname">Last name</label><br>
+        <input type="text" id="lname" name="lname" value=""><br>
+        <div id="error2" class="error-message"></div>
+        <p><strong> Who are you Exactly?</strong> </p>
+        <select id="education" name="education">
+            <option value="None">--None--</option>
+            <option value="student">Student</option>
+            <option value="lecture">Lecture</option>
+            <option value="assistance">Assistance</option>
+        </select><br>
+        <div id="error3" class="error-message"></div>
+        <p><strong> Complaints?</strong></p><br>
+        <textarea id="Complaint" name="Complaint"  row ="7"></textarea><br>
+        <div id="error4" class="error-message"></div>
+        <input type="submit" value="Submit">
+       </form>
+    </div>
+    
+    <!-- partial -->
+      
+    </body>
+   
+    </html>
